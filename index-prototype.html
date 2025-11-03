@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер на Прототипах - Інтерактивний Слайдер</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .version-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .version-switcher {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .version-switcher a {
+            display: block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .version-switcher a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="version-switcher">
+        <a href="index.html" data-version="classes">🎯 Версія на Класах</a>
+        <a href="index-prototype.html" data-version="prototypes">🧩 Версія на Прототипах</a>
+        <a href="index-orig.html" data-version="original">📄 Оригінальна версія</a>
+    </div>
+
+    <div class="container">
+        <h1>Слайдер на Прототипах</h1>
+        <p style="text-align: center; color: rgba(255,255,255,0.9); margin-bottom: 20px;">
+            Реалізація з використанням функцій-конструкторів, прототипів та наслідування
+        </p>
+
+        <div class="slider-wrapper">
+            <!-- Slider Container -->
+            <div class="slider-container">
+                <!-- Слайди -->
+                <div class="slide active">
+                    <div class="slide-content">
+                        <div class="slide-number">1</div>
+                        <h2>Перший Слайд</h2>
+                        <p>Красивий букет квітів</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-number">2</div>
+                        <h2>Другий Слайд</h2>
+                        <p>Елегантний букет квітів у вазі</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-number">3</div>
+                        <h2>Третій Слайд</h2>
+                        <p>Букет свіжих квітів</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-number">4</div>
+                        <h2>Четвертий Слайд</h2>
+                        <p>Ніжний букет квітів</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-number">5</div>
+                        <h2>П'ятий Слайд</h2>
+                        <p>Гарний букет свіжих квітів</p>
+                    </div>
+                </div>
+
+                <!-- Навігація, індикатори та контролі створюються динамічно через JavaScript -->
+            </div>
+        </div>
+
+        <div
+            style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; color: white;">
+            <h3 style="margin-bottom: 15px;">🔧 Особливості реалізації:</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0;">✅ Базовий конструктор <code>BaseSlider</code> з основними функціями</li>
+                <li style="padding: 8px 0;">✅ Розширений конструктор <code>InteractiveSlider</code> з наслідуванням
+                    через прототипи</li>
+                <li style="padding: 8px 0;">✅ Динамічна генерація всіх елементів управління (кнопки, індикатори)</li>
+                <li style="padding: 8px 0;">✅ Об'єкт конфігурації для налаштування поведінки</li>
+                <li style="padding: 8px 0;">✅ Підтримка тач-жестів та перетягування мишею</li>
+                <li style="padding: 8px 0;">✅ Автоматична пауза при наведенні миші</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script-prototype.js"></script>
+</body>
+
+</html>

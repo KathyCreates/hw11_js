@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивний Слайдер</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .version-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .version-switcher {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .version-switcher a {
+            display: block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .version-switcher a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="version-switcher">
+        <a href="index.html" data-version="classes">🎯 Версія на Класах</a>
+        <a href="index-prototype.html" data-version="prototypes">🧩 Версія на Прототипах</a>
+        <a href="index-orig.html" data-version="original">📄 Оригінальна версія</a>
+    </div>
+
+    <div class="container">
+        <h1>Слайдер Зображень З Квітами</h1>
+
+        <div class="slider-wrapper">
+            <!-- Slider Container -->
+            <div class="slider-container">
+                <div class="slider-track">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <div class="slide-number">1</div>
+                            <h2>Перший Слайд</h2>
+                            <p>Красивий букет квітів</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-number">2</div>
+                            <h2>Другий Слайд</h2>
+                            <p>Елегантний букет квітів у вазі</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-number">3</div>
+                            <h2>Третій Слайд</h2>
+                            <p>Букет свіжих квітів</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-number">4</div>
+                            <h2>Четвертий Слайд</h2>
+                            <p>Ніжний букет квітів</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-number">5</div>
+                            <h2>П'ятий Слайд</h2>
+                            <p>Гарний букет свіжих квітів</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button class="nav-btn prev-btn" aria-label="Попередній слайд">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="nav-btn next-btn" aria-label="Наступний слайд">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Indicators -->
+            <div class="indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="control-btn pause-btn" aria-label="Пауза/Відновлення">
+                    <svg class="play-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                    <span class="control-text">Пауза</span>
+                </button>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <p>💡 Використовуйте <strong>стрілки ←→</strong> на клавіатурі, <strong>свайп</strong> на мобільному або
+                    <strong>перетягування мишею</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
